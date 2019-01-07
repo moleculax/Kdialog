@@ -1,14 +1,10 @@
-kdialog allows you to display dialog boxes from shell scripts.
-The syntax is very much inspired from the "dialog" command
-(which shows text mode dialogs).
+kdialog permite mostrar cuadros de diálogo desde shell scripts.
 
-However the width and height attributes have been removed for
-most dialogs - Qt/KDE have layouts ;)
+<b>Qt/KDE </b>
 
-A tutorial on using kdialog is available at
-http://techbase.kde.org/Development/Tutorials/Shell_Scripting_with_KDE_Dialogs
-If you change or add any functionality, please contact Brad
-Hards <bradh@frogmouth.net> to ensure it is reflected in the
-tutorial.
+Tutorial de uso de kdialog disponible:<br>
+<a href="http://techbase.kde.org/Development/Tutorials/Shell_Scripting_with_KDE_Dialogs">
+http://techbase.kde.org/Development/Tutorials/Shell_Scripting_with_KDE_Dialogs</a>
+<br>
 
-Current maintainer: David Faure <faure@kde.org>
+<a href="http://moleculax.com.ve"> http://moleculax.com.ve</a>
