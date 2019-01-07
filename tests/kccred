@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#Emilio J. Gomez
+#moleculax@protonmail.com
+#Configuración basica de interfaces de red en debian.
+#06/01/18
+
+kdialog --title "CCINTERFACE" --msgbox "Ejecute como root; para edición de: /etc/network/interfaces  "  0 0
+
+	clear
+	rm interfaces
+	iface=$(kdialog --title 'INTERFACES'  --inputbox "INTRODUZCA iface ethN (COLOQUE eth0 en caso de usarla): " eth0)
+	address=$(kdialog --title 'Address'  --inputbox "IP" 000.000.000.000)
+	netmask=$(kdialog --title 'Netmask'  --inputbox "NETMASK" 255.255.255.0)
+	gateway=$(kdialog --title 'Gateway'  --inputbox "GATEWAY")
+
+
+kdialog --title "CCINTERFACE" --msgbox "Para continuar presione aceptar." 0 0
+#for i in $(seq 0 20 100) ; do sleep 1; echo $i | kdialog --gauge "PRECESANDO" 0 50 0; done
+if [ "$?" = "255" ]
+	rm -r /etc/network/interfaces 
+	echo "# This file describes the network interfaces available on your system" >> /etc/network/interfaces
+	echo "# and how to activate them. For more information, see interfaces(5). " >> /etc/network/interfaces
+	echo "source /etc/network/interfaces.d/*  " >> /etc/network/interfaces
+	echo "# The loopback network interface" >> /etc/network/interfaces
+	echo "auto lo" >> /etc/network/interfaces
+	echo "auto $iface" >> /etc/network/interfaces
+	echo "iface $iface inet static " >> /etc/network/interfaces
+	echo "address $address" >> /etc/network/interfaces
+	echo "netmask $netmask" >> /etc/network/interfaces
+	echo "gateway $gateway" >> /etc/network/interfaces
+
+then
+	kdialog --title "DATOS PROCESADOS" --msgbox "CONFIGURACION EXITOSA" 0 0
+else
+	exit 
+	clear
+	kdialog --title "NO SE PROCESARON LOS DATOS" --infobox "SIN PROCESAR" 0 0
+	clear
+
+fi
+ 
+kdialog --title "CONFIGURACION FINAL:" --textbox /etc/network/interfaces 0 30
+kdialog --title "GRACIAS POR USAR:" --textbox msg 0 30
+
+clear

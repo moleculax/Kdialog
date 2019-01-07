@@ -1,0 +1,9 @@
+dbusRef=`kdialog --progressbar "Presione cancelar en cualquier momento" 10`
+qdbus $dbusRef org.kde.kdialog.ProgressDialog.showCancelButton true
+
+while test "false" = "`qdbus $dbusRef org.kde.kdialog.ProgressDialog.wasCancelled 2>/dev/null`"; do
+  inc=$((`qdbus $dbusRef org.freedesktop.DBus.Properties.Get org.kde.kdialog.ProgressDialog value` + 1))
+  qdbus $dbusRef org.freedesktop.DBus.Properties.Set org.kde.kdialog.ProgressDialog value $inc;
+  sleep 1
+done
+

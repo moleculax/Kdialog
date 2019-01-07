@@ -1,0 +1,17 @@
+dbusRef=`kdialog --geometry 300x200+100-100 --progressbar "Initialising" 6`
+qdbus $dbusRef value 1
+qdbus $dbusRef setLabelText "Realmente pensando"
+sleep 2
+qdbus $dbusRef value 2
+sleep 2
+qdbus $dbusRef setLabelText "Pensando un poco mas"
+qdbus $dbusRef value 3
+sleep 2
+qdbus $dbusRef value 4
+sleep 2
+qdbus $dbusRef setLabelText "Finalizar"
+qdbus $dbusRef value 5
+sleep 1
+qdbus $dbusRef value 6
+sleep 1
+qdbus $dbusRef close
