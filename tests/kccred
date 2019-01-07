@@ -43,4 +43,4 @@ fi
 kdialog --title "CONFIGURACION FINAL:" --textbox /etc/network/interfaces 0 30
 kdialog --title "GRACIAS POR USAR:" --textbox msg 0 30
 
-clear
+
