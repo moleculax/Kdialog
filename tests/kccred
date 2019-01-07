@@ -3,7 +3,7 @@
 #Emilio J. Gomez
 #moleculax@protonmail.com
 #Configuración basica de interfaces de red en debian.
-#06/01/18
+#http://moleculax.com.ve/
 
 kdialog --title "CCINTERFACE" --msgbox "Ejecute como root; para edición de: /etc/network/interfaces  "  0 0
 
